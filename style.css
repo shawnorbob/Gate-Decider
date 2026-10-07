@@ -1,0 +1,425 @@
+/* =====================================================================
+   Staff Attendance Terminal — Stylesheet
+   Palette: Dark Blue (Navy) / Black / White / Gold
+   ===================================================================== */
+
+:root {
+  --navy: #0a1a3c;
+  --navy-deep: #071228;
+  --navy-light: #16305e;
+  --black: #0b0b0d;
+  --white: #ffffff;
+  --gold: #d4af37;
+  --gold-light: #f2dd8a;
+  --gray-bg: #f4f5f7;
+  --gray-line: #dfe2e8;
+  --text-dark: #1b1b1d;
+  --late: #b23a3a;
+  --early: #2f7d4f;
+  --shadow: 0 6px 18px rgba(10, 26, 60, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--gray-bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------------------
+   Login Page (Index.html)
+   ------------------------------------------------------------------- */
+
+body:has(#login) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--navy-light), var(--navy-deep) 65%, var(--black));
+}
+
+form {
+  width: 100%;
+  max-width: 380px;
+  margin: 40px auto;
+}
+
+fieldset,
+Fieldset {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+legend {
+  padding: 0 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold-light);
+  border-radius: 6px;
+}
+
+fieldset img {
+  max-width: 90px;
+  margin: 8px auto 4px;
+  display: block;
+}
+
+h1.Lheader {
+  margin: 8px 0 4px;
+  color: var(--navy);
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+p.Snote {
+  margin: 0 0 10px;
+  color: #555;
+  font-size: 0.88rem;
+}
+
+h3.Sname {
+  margin: 4px 0 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray-line);
+  color: var(--gold);
+  background: var(--navy);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  color: var(--navy-deep);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.45);
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+button:active {
+  transform: translateY(0);
+}
+
+#login {
+  background: linear-gradient(180deg, var(--navy-light), var(--navy));
+  color: var(--gold-light);
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+#login:hover {
+  box-shadow: 0 4px 14px rgba(10, 26, 60, 0.5);
+}
+
+.login-error {
+  color: var(--late);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  min-height: 1em;
+}
+
+/* ---------------------------------------------------------------------
+   Navigator (Dashboard / Staff pages)
+   ------------------------------------------------------------------- */
+
+nav.nav {
+  background: linear-gradient(90deg, var(--navy-deep), var(--navy));
+  border-bottom: 3px solid var(--gold);
+  box-shadow: var(--shadow);
+  padding: 0 24px;
+}
+
+nav.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+nav.nav li {
+  margin: 0;
+}
+
+nav.nav a {
+  display: inline-block;
+  padding: 16px 20px;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+nav.nav a:hover,
+nav.nav a.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* ---------------------------------------------------------------------
+   Section headings
+   ------------------------------------------------------------------- */
+
+section {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+}
+
+h4.Dat,
+h4.ast,
+h4.ancst {
+  color: var(--white);
+  background: linear-gradient(90deg, var(--navy), var(--navy-light));
+  border-left: 6px solid var(--gold);
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow);
+}
+
+.live-date {
+  display: inline-block;
+  float: right;
+  font-weight: 500;  
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ---------------------------------------------------------------------
+   Tables — Daily Attendance / Administrative / Academic / Ancillary
+   ------------------------------------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 26px;
+}
+
+table.admin,
+table.accademic,
+table.Ancillary {
+  border: 1px solid var(--gray-line);
+}
+
+table th {
+  background: var(--navy);
+  color: var(--gold-light);
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--gold);
+}
+
+table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--gray-line);
+  font-size: 0.92rem;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:nth-child(even),
+table tr:nth-child(even) {
+  background: var(--gray-bg);
+}
+
+table tr:hover td {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+/* the "Male Staff" / "Female Staff" section divider row */
+table td.staff-group {
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 8px 14px;
+}
+
+/* status pills used by script.js when it fills in Check in / Check out cells */
+.status-time {
+  font-weight: 600;
+}
+
+.status-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.status-tag.on-time {
+  background: var(--early);
+}
+
+.status-tag.late {
+  background: var(--late);
+}
+
+/* radio + submit cells on the staff terminal pages */
+table input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--navy);
+  cursor: pointer;
+}
+
+table input[type="button"] {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+/* small on-page toast fired after a submit */
+#terminalToast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--navy-deep);
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#terminalToast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* history / date picker injected on Dash.html */
+.dash-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+
+.dash-controls select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--gray-line);
+}
+
+@media (max-width: 640px) {
+  nav.nav ul {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 0.82rem;
+  }
+
+  section {
+    padding: 0 12px 30px;
+  }
+}
+/* h3 titles now sit above each table */
+section h3 {
+  color: var(--navy);
+  margin: 24px 0 10px;
+}
+
+/* keep the gold divider row gold on hover */
+table tr:hover td.staff-group {
+  background: var(--gold);
+}
+
+/* "Early" check-out tag */
+.status-tag.early {
+  background: #c77d1a;
+}
+
+/* spacing for Remove / Download buttons */
+.nbut,
+input.save,
+#save-all {
+  margin: 0 6px 6px 0;
+}
+
+/* let tables scroll sideways on phones instead of squashing */
+@media (max-width: 640px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
